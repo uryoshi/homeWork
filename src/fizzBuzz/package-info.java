@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author a
- *
- */
-package fizzBuzz;
