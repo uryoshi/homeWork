@@ -2,15 +2,13 @@ package fizzBuzz;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
 /**
  * 冬休みの宿題
  */
-public class FizzBuzz_1 {
+public class FizzBuzz {
 
     /**
      * パターン1
@@ -27,19 +25,13 @@ public class FizzBuzz_1 {
 
         System.out.println("--------------------FizzBuzz処理開始-------------------------");
 
-        IntStream.range(1, 101).mapToObj(num -> isFizzBuzz(num, 3, 5) ? num + "[FizzBuzz!]"
+        IntStream.rangeClosed(1, 101).mapToObj(num -> isFizzBuzz(num, 3, 5) ? num + "[FizzBuzz!]"
                 : isFizz(num, 3) ? num + "[Fizz!]"
                         : isBuzz(num, 5) ? num + "[Buzz!]"
                                 : String.valueOf(num))
                 .forEach(numString -> System.out.println(numString));
 
         System.out.println("--------------------FizzBuzz処理終了-------------------------");
-
-        LocalDateTime l = LocalDateTime.now();
-        String str = "01/28 00:30";
-
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd hh:mm");
-        sdf.parse(str);
     }
 
     /**
