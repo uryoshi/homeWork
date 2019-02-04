@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * いろいろな探索を行うクラス。
  */
-public class anySerch {
+public class AnySerch {
 
     /** 探索対象最大値 */
     private static int serchTargetListSize = 1000000;
@@ -20,7 +20,6 @@ public class anySerch {
 
         // ランダムで探索するIDを取得
         int target = (int) (Math.random() * serchTargetListSize);
-        System.out.println("探索対象:" + target);
 
         // 処理結果
         boolean result = false;
@@ -28,12 +27,12 @@ public class anySerch {
         // 二分探索
         long startTime = System.currentTimeMillis();
         result = binarySerch(target, targetList);
-        outPutMessage(SearchType.BINARY.name(), targetList.size(), result, startTime);
+        outPutMessage(target, SearchType.BINARY.name(), targetList.size(), result, startTime);
 
         // 線形探索
         startTime = System.currentTimeMillis();
         result = linerSerch(target, targetList);
-        outPutMessage(SearchType.LINER.name(), targetList.size(), result, startTime);
+        outPutMessage(target, SearchType.LINER.name(), targetList.size(), result, startTime);
 
     }
 
@@ -123,8 +122,9 @@ public class anySerch {
      * @param result 処理結果
      * @param startTime 処理時間
      */
-    private static void outPutMessage(String serchType, int targetSize, boolean result, long startTime) {
+    private static void outPutMessage(int target, String serchType, int targetSize, boolean result, long startTime) {
         System.out.println("===========" + serchType + "===========");
+        System.out.println("探索対象       : " + target);
         System.out.println("探索対象数     : " + targetSize);
         System.out.println("探索結果       : " + result);
         System.out.println("処理時間       : " + (System.currentTimeMillis() - startTime) + "ms");
