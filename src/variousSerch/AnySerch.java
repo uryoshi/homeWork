@@ -114,9 +114,7 @@ public class AnySerch {
     /**
      * 標準出力を行う。
      *
-     * @param serchType 探索方式
-     * @param targetSize 処理対象件数
-     * @param result 処理結果
+     * @param dto 探索対象情報保持クラス
      * @param startTime 処理時間
      */
     private static void outPutMessage(SeachTargetDto dto, long startTime) {

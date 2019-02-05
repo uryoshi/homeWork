@@ -3,6 +3,9 @@ package variousSerch;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 探索対象情報保持クラス
+ */
 public class SeachTargetDto {
 
     /** 検索対象 */
